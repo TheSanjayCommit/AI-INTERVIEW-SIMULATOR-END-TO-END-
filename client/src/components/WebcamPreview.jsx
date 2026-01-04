@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Camera, CameraOff, AlertTriangle } from 'lucide-react';
 
-export default function WebcamPreview({ isActive, onPermissionError }) {
+export default function WebcamPreview({ isActive, onPermissionError, className = "" }) {
     const videoRef = useRef(null);
     const streamRef = useRef(null);
     const [hasPermission, setHasPermission] = useState(null);
@@ -56,7 +56,7 @@ export default function WebcamPreview({ isActive, onPermissionError }) {
     if (!isActive) return null;
 
     return (
-        <div className="fixed top-20 right-6 w-48 h-36 bg-gray-900 rounded-xl shadow-2xl overflow-hidden border-2 border-indigo-500 z-50 transition-all hover:scale-105">
+        <div className={`bg-gray-900 rounded-xl shadow-2xl overflow-hidden border-2 border-indigo-500 relative transition-all ${className}`}>
             {hasPermission === false ? (
                 <div className="flex flex-col items-center justify-center h-full text-red-400 p-2 text-center bg-gray-800">
                     <CameraOff size={24} className="mb-2" />

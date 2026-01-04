@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import RoleSelector from '../components/RoleSelector';
 import { useNavigate } from 'react-router-dom';
-import { Bot, Terminal, Code2, Layers, Cpu, UserCheck } from 'lucide-react';
+import { Bot, Terminal, Code2, Layers, Cpu, UserCheck, History } from 'lucide-react';
 
 const ROLES = [
     { id: 'frontend', label: 'Frontend Developer', icon: Code2, color: 'text-blue-600', bg: 'bg-blue-100' },
@@ -20,7 +20,15 @@ export default function Home() {
     };
 
     return (
-        <div className="max-w-4xl mx-auto px-4 py-12">
+        <div className="max-w-4xl mx-auto px-4 py-12 relative">
+            <button
+                onClick={() => navigate('/history')}
+                className="absolute top-4 right-4 flex items-center gap-2 px-4 py-2 bg-white text-indigo-600 rounded-lg shadow-sm hover:bg-indigo-50 font-medium transition-colors border border-indigo-100"
+            >
+                <History size={18} />
+                View History
+            </button>
+
             <div className="text-center mb-16">
                 <div className="flex justify-center mb-6">
                     <div className="p-4 bg-indigo-600 rounded-2xl shadow-xl transform rotate-3 hover:rotate-0 transition-all duration-300">
@@ -47,7 +55,7 @@ export default function Home() {
             </div>
 
             <div className="mt-12 text-center text-sm text-gray-500">
-                <p>Powered by Groq & Vercel Serverless Functions</p>
+                <p>This Application is still in development mode and Wait for the Professional Version </p>
             </div>
         </div>
     );

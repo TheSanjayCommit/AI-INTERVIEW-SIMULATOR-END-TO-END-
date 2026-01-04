@@ -20,18 +20,18 @@ export default function AnswerInput({ onSend, disabled }) {
     }
 
     return (
-        <div className="bg-white p-4 border-t border-gray-100 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
-            <form onSubmit={handleSubmit} className="relative max-w-4xl mx-auto">
+        <div className="bg-white p-4 border-t border-gray-100 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] sticky bottom-0 z-20 w-full">
+            <form onSubmit={handleSubmit} className="relative w-full max-w-5xl mx-auto">
                 <textarea
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     onKeyDown={handleKeyDown}
                     placeholder="Type your answer here..."
-                    rows={3}
+                    rows={1}
                     disabled={disabled}
-                    className="w-full p-4 pr-16 text-lg border-2 border-gray-200 rounded-2xl focus:border-indigo-500 focus:ring focus:ring-indigo-100 transition-all resize-none disabled:bg-gray-50 disabled:cursor-not-allowed"
+                    className="w-full p-3 pr-24 text-base md:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:ring focus:ring-indigo-100 transition-all resize-none disabled:bg-gray-50 disabled:cursor-not-allowed min-h-[50px] max-h-[150px]"
                 />
-                <div className="absolute right-3 bottom-3 flex gap-2">
+                <div className="absolute right-2 bottom-2 flex gap-1">
                     <button
                         type="button"
                         className="p-2 text-gray-400 hover:text-indigo-600 transition-colors"
@@ -42,9 +42,9 @@ export default function AnswerInput({ onSend, disabled }) {
                     <button
                         type="submit"
                         disabled={!text.trim() || disabled}
-                        className="p-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all transform hover:scale-105 active:scale-95"
+                        className="p-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all transform hover:scale-105 active:scale-95"
                     >
-                        <Send size={24} />
+                        <Send size={20} />
                     </button>
                 </div>
             </form>

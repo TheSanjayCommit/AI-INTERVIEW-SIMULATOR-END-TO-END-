@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import ScoreCard from '../components/ScoreCard';
 import { Loader2, Home } from 'lucide-react';
+import { saveAttempt } from '../utils/storage';
 
 export default function Report() {
     const location = useLocation();
@@ -51,6 +52,16 @@ export default function Report() {
                     // Because we used jsonMode, the content should be a JSON string
                     const parsed = JSON.parse(data.reply);
                     setReportData(parsed);
+
+                    // Save attempt to history
+                    const attemptData = {
+                        date: new Date().toISOString(),
+                        role: role,
+                        score: parsed.overallScore,
+                        status: location.state?.status || 'Completed'
+                    };
+                    saveAttempt(attemptData);
+
                 } else {
                     throw new Error("No report generated");
                 }
