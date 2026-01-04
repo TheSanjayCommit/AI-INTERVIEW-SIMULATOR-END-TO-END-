@@ -10,6 +10,10 @@
         {
             "source": "/api/health",
             "destination": "/api/health.js"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 }
