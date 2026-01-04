@@ -1,0 +1,15 @@
+{
+    "buildCommand": "cd client && npm install && npm run build",
+    "outputDirectory": "client/dist",
+    "devCommand": "cd client && npm run dev -- --port $PORT",
+    "rewrites": [
+        {
+            "source": "/api/interview",
+            "destination": "/api/interview.js"
+        },
+        {
+            "source": "/api/health",
+            "destination": "/api/health.js"
+        }
+    ]
+}

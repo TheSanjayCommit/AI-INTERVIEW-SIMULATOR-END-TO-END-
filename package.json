@@ -1,0 +1,17 @@
+{
+  "name": "ai-interview-simulator",
+  "version": "1.0.0",
+  "description": "AI Interview Simulator",
+  "main": "api/interview.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run dev --prefix client",
+    "install:all": "npm install && cd client && npm install"
+  },
+  "dependencies": {
+    "groq-sdk": "^0.37.0"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
