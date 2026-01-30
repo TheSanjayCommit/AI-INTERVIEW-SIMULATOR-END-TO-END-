@@ -101,3 +101,4 @@ vercel --prod
 ## 📝 License
 
 MIT
+--live -app https://ai-interview-simulator-end-to-end.vercel.app/
